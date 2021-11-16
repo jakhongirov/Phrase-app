@@ -1,13 +1,18 @@
-import React from 'react';
-import './App.scss';
-import Unauthenticated from './UnauthenticatedApp';
+import React from "react";
+import "./App.scss";
+import Unauthenticated from "./UnauthenticatedApp";
+
+// Pages
+import UserPage from "./Pages/User/User";
 
 function App() {
-	return (
-		<>
-			<Unauthenticated />
-		</>
-	);
+  return (
+    <>
+      <UserPage />
+
+      <Unauthenticated />
+    </>
+  );
 }
 
 export default App;
