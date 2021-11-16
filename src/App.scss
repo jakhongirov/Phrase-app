@@ -16,6 +16,32 @@
 		url('./Assets/Fonts/rubik-v14-latin-500.woff') format('woff');
 }
 
+@font-face {
+	font-family: 'SFProDisplay';
+	src: url('./Assets/Fonts/SFProDisplay-Regular.woff2') format('woff2'),
+		 url('./Assets/Fonts/SFProDisplay-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SFProDisplay';
+	src: url('./Assets/Fonts/SFProDisplay-Medium.woff2') format('woff2'),
+		 url('./Assets/Fonts/SFProDisplay-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SFProDisplay';
+	src: url('./Assets/Fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+		 url('./Assets/Fonts/SFProDisplay-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
 
 html {
 	height: 100%;
