@@ -1,18 +1,17 @@
-import React from "react";
-import "./App.scss";
-import UnauthenticatedApp from './UnauthenticatedApp'
-
-// Pages
-import UserPage from "./Pages/User/User";
+import React from 'react';
+import './App.scss';
+import UnauthenticatedApp from './UnauthenticatedApp';
+import AuthenticatedApp from './AuthenticatedApp';
+import useToken from './Hooks/useToken';
 
 function App() {
-  return (
-    <>
-      {/* <UserPage /> */}
+	const [token] = useToken();
 
-      <UnauthenticatedApp />
-    </>
-  );
+	if (token) {
+		return <AuthenticatedApp />;
+	} else {
+		return <UnauthenticatedApp />;
+	}
 }
 
 export default App;
