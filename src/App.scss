@@ -73,7 +73,8 @@ body {
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
-	background-color: #fff;
+	background: #E5E5E5;
+
 }
 
 #root {
@@ -89,11 +90,12 @@ img {
 }
 
 .main{
-   flex-grow: 1;
+   flex-grow: 3;
 }
 
 .container {
 	width: 100%;
+	height: 100%;
 	min-width: 320px;
 	margin: 0 auto;
 	padding: 20px;
