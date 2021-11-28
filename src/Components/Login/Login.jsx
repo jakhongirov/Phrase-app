@@ -11,12 +11,27 @@ function Login() {
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 
-		const { username, userpassword } = evt.target.elements;
+		const { username, password } = evt.target.elements;
 
-		setToken({
-			username: username.value,
-			userpassword: userpassword.value,
+		const myHeaders = new Headers();
+		myHeaders.append('Content-Type', 'application/json');
+
+		const raw = JSON.stringify({
+			username: username.value.trim(),
+			password: password.value.trim(),
 		});
+
+		const requestOptions = {
+			method: 'POST',
+			headers: myHeaders,
+			body: raw,
+			redirect: 'follow',
+		};
+
+		fetch( process.env.REACT_APP_API_URL 	+'/authToken', requestOptions)
+			.then((response) => response.text())
+			.then((data) => setToken(data))
+			.catch((error) => console.log('error', error));
 	};
 
 	return (
@@ -45,14 +60,14 @@ function Login() {
 									className='input__password'
 									type={type}
 									placeholder='Password'
-									name='userpassword'
+									name='password'
 									required
 								/>
 
 								<span
 									className='password__see-btn'
 									ref={password}
-									onClick={(evt) => {
+									onSubmit={(evt) => {
 										setSee((prev) => !prev);
 										if (see) {
 											setType('text');
