@@ -1,0 +1,23 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 56px;
+
+  border-radius: 10px;
+  font-family: SF Pro Display;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #ffffff;
+
+  &--red {
+    background-color: #e33636;
+  }
+  &--blue {
+    background-color: #3d58e8;
+  }
+}

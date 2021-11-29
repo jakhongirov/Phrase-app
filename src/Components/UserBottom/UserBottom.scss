@@ -1,3 +1,35 @@
-.userPage__bottom {
+.user-page_bottom {
   color: green;
+  max-height: 461px;
+  background: #f7f8fe;
+  border-radius: 30px 30px 0px 0px;
+
+  &-sec {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 98px;
+    margin-left: 21px;
+    margin-right: 19px;
+    margin-bottom: 173px;
+
+    &__phrases {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    &__bookmarks {
+      justify-content: space-between;
+      display: flex;
+      margin-bottom: 15px;
+    }
+  }
+  &-btns {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.sec-line {
+  color: black;
 }

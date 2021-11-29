@@ -1,3 +1,67 @@
-.userPage__top {
-  color: red;
+.user-page_top {
+  &__title {
+    margin-top: 24px;
+    margin-bottom: 22px;
+    font-family: SF Pro Display;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    font-feature-settings: "pnum" on, "lnum" on;
+
+    color: #ffffff;
+  }
+  &__img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    left: 113px;
+    top: 116px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+    &__in {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      width: 120px;
+      height: 120px;
+      left: 128px;
+      border-radius: 50%;
+
+      background: #e2e3ea;
+    }
+  }
+  &__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &__name {
+    margin-top: 9px;
+    margin-bottom: 6px;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #ffffff;
+  }
+
+  &__number {
+    margin-bottom: 27px;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
