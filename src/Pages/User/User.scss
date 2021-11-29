@@ -1,9 +1,11 @@
 .user-page {
   text-align: center;
-  margin: auto;
 
-  width: 375px;
-  height: calc(812px - 44px);
+  height: 100%;
+  width: 100%;
+  min-width: 375px;
+  min-height: calc(812px - 44px);
+  padding-bottom: 0;
 
   background: #3d58e8;
 }
