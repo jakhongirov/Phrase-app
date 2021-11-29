@@ -10,7 +10,7 @@
 @font-face {
 	font-family: 'Rubik';
 	font-style: normal;
-	font-weight: 500;       
+	font-weight: 500;
 	src: local(''),
 		url('./Assets/Fonts/rubik-v14-latin-500.woff2') format('woff2'),
 		url('./Assets/Fonts/rubik-v14-latin-500.woff') format('woff');
@@ -19,7 +19,7 @@
 @font-face {
 	font-family: 'SFProDisplay';
 	src: url('./Assets/Fonts/SFProDisplay-Regular.woff2') format('woff2'),
-		 url('./Assets/Fonts/SFProDisplay-Regular.woff') format('woff');
+		url('./Assets/Fonts/SFProDisplay-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
 	font-family: 'SFProDisplay';
 	src: url('./Assets/Fonts/SFProDisplay-Medium.woff2') format('woff2'),
-		 url('./Assets/Fonts/SFProDisplay-Medium.woff') format('woff');
+		url('./Assets/Fonts/SFProDisplay-Medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -37,7 +37,7 @@
 @font-face {
 	font-family: 'SFProDisplay';
 	src: url('./Assets/Fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-		 url('./Assets/Fonts/SFProDisplay-Semibold.woff') format('woff');
+		url('./Assets/Fonts/SFProDisplay-Semibold.woff') format('woff');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -73,7 +73,7 @@ body {
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
-	background-color: #fff;
+	background-color: #E5E5E5;
 }
 
 #root {
@@ -88,8 +88,8 @@ img {
 	vertical-align: middle;
 }
 
-.main{
-   flex-grow: 1;
+.main {
+	flex-grow: 1;
 }
 
 .container {
