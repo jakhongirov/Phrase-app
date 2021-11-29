@@ -10,7 +10,7 @@ import BookmarksIcon from '../Lib/BookmarksIcon.jsx';
 import SettingsIcon from '../Lib/SettingsIcon.jsx';
 import LogoutIcon from '../Lib/LogoutIcon.jsx';
 
-function ProfileMain() {
+function ProfileMain({ setOpen }) {
 	return (
 		<>
 			<div className='profile-main'>
@@ -52,7 +52,14 @@ function ProfileMain() {
 					</li>
 				</ul>
 
-				<MenuItem icon={<LogoutIcon />} text='Log out' path='/logout' />
+				<button
+					className='profile-main__button'
+					onClick={() => setOpen((prev) => !prev)}>
+					<div className='profile-main__button-icon'>
+						<LogoutIcon />
+					</div>
+					Log out
+				</button>
 			</div>
 		</>
 	);
