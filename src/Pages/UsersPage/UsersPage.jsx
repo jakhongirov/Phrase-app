@@ -4,14 +4,24 @@ import arrowLeftBtn from '../../Assets/Image/arrow-left-back.svg';
 import profilUser from '../../Assets/Image/Profile.svg';
 
 function UserPage() {
-  const [data, setData] = React.useState([]);
+  const [user, setUser] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(process.env.REACT_APP_API_LOCOLHOST + '/users')
-      .then(res => res.json())
-      .then(data => setData(...data));
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzODAyNDI2OX0.X7yaQUfpaNAPNYoEB5bDvyTZW-hR7g8JKEK_KnKhOF4");
+
+    const requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch(process.env.REACT_APP_API_URL 	+ '/users/search?q=o&page=1&limit=10', requestOptions)
+      .then(response => response.json())
+      .then(result => setUser(result.data))
+      .catch(error => console.log('error', error));
   }, [])
-  
+
   return (
     <>
       <div className="user-page">
@@ -32,16 +42,16 @@ function UserPage() {
             <div className='user-page__main'>
 
               <ul className='user-page__main-list'>
-                {data.length > 0 && data.map(row => (
+                {user.length > 0 && user.map(row => (
                   <li className='user-page__main-item'>
                     <button className='user-page__main-button'>
                       <img className='user-page__main-img' src={profilUser} alt='Profil user name img' width='17' height='23' />
-                    </button>
 
-                    <div className='user-page__main-inner'>
-                      <h3 className='user-page__main-heading'> John Doe </h3>
-                      <span className='user-page__main-span'> 15*****25 </span>
-                    </div>
+                      <div className='user-page__main-inner'>
+                        <h3 className='user-page__main-heading'> {row.fullname} </h3>
+                        <span className='user-page__main-span'> 15*****25 </span>
+                      </div>
+                    </button>
                   </li>
                 ))}
               </ul>
