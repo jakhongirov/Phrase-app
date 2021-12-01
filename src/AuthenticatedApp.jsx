@@ -1,17 +1,17 @@
-import React from 'react';
-import UsersPage from '../src/Pages/UsersPage/UsersPage';
-// import Statistics from './Pages/Statistics/Statistics'
-import AddUser from './Pages/AddUser/AddUser';
+import React from "react";
+import UserPage from "./Pages/User/User";
+// import Bookmarks from './Pages/Bookmarks/Bookmarks';
+// import Profile from "../src/Pages/Profile/Profile.jsx";
 
 function AuthenticatedApp() {
-	return (
-		<>
-			<AddUser/>
-			{/* <Statistics /> */}
+  return (
+    <>
+      <UserPage />
+      {/* <Bookmarks /> */}
 
-			<UsersPage />
-		</>
-	);
+      {/* <Profile /> */}
+    </>
+  );
 }
 
 export default AuthenticatedApp;

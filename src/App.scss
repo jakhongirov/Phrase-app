@@ -1,13 +1,14 @@
 @font-face {
-	font-family: 'Rubik';
-	font-style: normal;
-	font-weight: 400;
-	src: local(''),
-		url('./Assets/Fonts/rubik-v14-latin-regular.woff2') format('woff2'),
-		url('./Assets/Fonts/rubik-v14-latin-regular.woff') format('woff');
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("./Assets/Fonts/rubik-v14-latin-regular.woff2") format("woff2"),
+    url("./Assets/Fonts/rubik-v14-latin-regular.woff") format("woff");
 }
 
 @font-face {
+<<<<<<< HEAD
 	font-family: 'Rubik';
 	font-style: normal;
 	font-weight: 500;
@@ -41,32 +42,68 @@
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
+=======
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""),
+    url("./Assets/Fonts/rubik-v14-latin-500.woff2") format("woff2"),
+    url("./Assets/Fonts/rubik-v14-latin-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  src: url("./Assets/Fonts/SFProDisplay-Regular.woff2") format("woff2"),
+    url("./Assets/Fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  src: url("./Assets/Fonts/SFProDisplay-Medium.woff2") format("woff2"),
+    url("./Assets/Fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  src: url("./Assets/Fonts/SFProDisplay-Semibold.woff2") format("woff2"),
+    url("./Assets/Fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+>>>>>>> 311f6ff74aa5f38e009dde9a52670da31afc7ad0
 }
 
 html {
-	height: 100%;
-	box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
-	scroll-behavior: smooth;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
 }
 
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
+<<<<<<< HEAD
 	height: 100%;
 	font-family: 'Rubik', 'sans-serif';
 	font-size: 16px;
@@ -74,24 +111,40 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #E5E5E5;
+=======
+  height: 100%;
+  font-family: "Rubik", "sans-serif";
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: #e5e5e5;
+>>>>>>> 311f6ff74aa5f38e009dde9a52670da31afc7ad0
 }
 
 #root {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
+<<<<<<< HEAD
+=======
+.main {
+  flex-grow: 3;
+}
+
+>>>>>>> 311f6ff74aa5f38e009dde9a52670da31afc7ad0
 .container {
-	width: 100%;
-	height: 100%;
-	min-width: 320px;
-	margin: 0 auto;
-	padding: 20px;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 20px;
 }

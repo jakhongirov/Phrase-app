@@ -23,3 +23,27 @@
 		border-bottom: 0.8px solid rgba(148, 175, 182, 0.5);
 	}
 }
+
+.profile-main__button {
+	display: flex;
+	align-items: center;
+	column-gap: 12px;
+	width: 100%;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 15px 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.profile-main__button-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	background-color: rgba($color: #4b6878, $alpha: 0.1);
+	border-radius: 5px;
+}
