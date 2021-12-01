@@ -1,14 +1,14 @@
-import React from 'react';
-import './ProfileMain.scss';
+import React from "react";
+import "./ProfileMain.scss";
 
-import MenuItem from '../MenuItem/MenuItem.jsx';
+import MenuItem from "../MenuItem/MenuItem.jsx";
 
-import UsersIcon from '../Lib/UsersIcon.jsx';
-import PhrasesIcon from '../Lib/PhrasesIcon.jsx';
-import StatisticsIcon from '../Lib/StatisticsIcon.jsx';
-import BookmarksIcon from '../Lib/BookmarksIcon.jsx';
-import SettingsIcon from '../Lib/SettingsIcon.jsx';
-import LogoutIcon from '../Lib/LogoutIcon.jsx';
+import UsersIcon from "../Lib/UsersIcon.jsx";
+import PhrasesIcon from "../Lib/PhrasesIcon.jsx";
+import StatisticsIcon from "../Lib/StatisticsIcon.jsx";
+import BookmarksIcon from "../Lib/BookmarksIcon.jsx";
+import SettingsIcon from "../Lib/SettingsIcon.jsx";
+import LogoutIcon from "../Lib/LogoutIcon.jsx";
 
 function ProfileMain({ setOpen }) {
 	return (

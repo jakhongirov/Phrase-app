@@ -1,0 +1,80 @@
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-content {
+    width: 335px;
+    height: 179px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 22px;
+  }
+
+  &-title {
+    font-family: Rubik, "sans-serif";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-align: center;
+    font-feature-settings: "pnum" on, "lnum" on;
+
+    color: #000000;
+
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  &-body {
+    font-family: Rubik, "sans-serif";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    text-align: center;
+    font-feature-settings: "pnum" on, "lnum" on;
+
+    color: #000000;
+
+    margin-bottom: 14px;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    font-family: Rubik, "sans-serif";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    font-feature-settings: "pnum" on, "lnum" on;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+
+    &--cancel {
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    &--delete {
+      color: #ed2222;
+    }
+  }
+}
