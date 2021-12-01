@@ -3,7 +3,11 @@ import './UsersPage.scss';
 import arrowLeftBtn from '../../Assets/Image/arrow-left-back.svg';
 import profilUser from '../../Assets/Image/Profile.svg';
 
+
 function UserPage() {
+
+  // const navigate = useNavigate()
+
   const [user, setUser] = React.useState([]);
 
   React.useEffect(() => {
@@ -43,7 +47,7 @@ function UserPage() {
 
               <ul className='user-page__main-list'>
                 {user.length > 0 && user.map(row => (
-                  <li className='user-page__main-item'>
+                  <li key={row.id} className='user-page__main-item'>
                     <button className='user-page__main-button'>
                       <img className='user-page__main-img' src={profilUser} alt='Profil user name img' width='17' height='23' />
 
@@ -56,7 +60,8 @@ function UserPage() {
                 ))}
               </ul>
 
-              <button className='add-user'>Add User</button>
+              <button className='add-user'>Add User</button> 
+              
             </div>
           </div>
         </div>

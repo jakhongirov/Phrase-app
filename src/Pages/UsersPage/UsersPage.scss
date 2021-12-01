@@ -86,10 +86,13 @@
 }
 
 .user-page__main-button {
+  display: flex;
+  align-items: center;
   border: transparent;
-  border-radius: 50%;
-  padding: 14px 18px;
+  // border-radius: 50%;
+  // padding: 14px 18px;
   margin-right: 18px;
+  background-color: transparent;
 }
 
 .user-page__main-heading {
@@ -117,4 +120,8 @@
   padding: 18px 0;
   border-radius: 10px;
   margin-top: 20px;
+}
+
+.user-page__main-inner {
+  margin-left: 15px;
 }

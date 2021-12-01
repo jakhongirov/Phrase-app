@@ -1,14 +1,13 @@
 import React from 'react';
-// import UserPage from './Pages/User/User';
-// import Bookmarks from './Pages/Bookmarks/Bookmarks';
 import UsersPage from '../src/Pages/UsersPage/UsersPage';
-// import Profile from '../src/Pages/Profile/Profile.jsx';
+// import Statistics from './Pages/Statistics/Statistics'
+import AddUser from './Pages/AddUser/AddUser';
 
 function AuthenticatedApp() {
 	return (
 		<>
-			{/* <UserPage /> */}
-			{/* <Bookmarks /> */}
+			<AddUser/>
+			{/* <Statistics /> */}
 
 			<UsersPage />
 		</>
