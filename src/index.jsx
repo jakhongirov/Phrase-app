@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { Provider as AuthProvider } from './Context/Authentication';
-import { BrowserRouter } from 'react-router-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
+import { Provider as AuthProvider } from './Context/Authentication'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -14,6 +14,6 @@ ReactDOM.render(
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root'),
-);
+)
 
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.register()
