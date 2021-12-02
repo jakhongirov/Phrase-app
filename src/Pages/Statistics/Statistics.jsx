@@ -1,6 +1,6 @@
 import React from "react";
 import './Statistics.scss';
-import Diagramm from '../../Pages/Diagramm/Diagramm';
+import Diagramm from '../Diagramm/Diagramm';
 
 function Statistics() {
   return (

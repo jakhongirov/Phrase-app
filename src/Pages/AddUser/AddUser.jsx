@@ -1,25 +1,34 @@
-import React from "react";
+import React from 'react';
 import './AddUser.scss';
-import AddUserInputs from '../AddUserInputs/AddUserInputs'
+import { useNavigate } from 'react-router-dom';
+import AddUserInputs from '../../Components/AddUserInputs/AddUserInputs';
 
 function AddUser() {
-  return (
-    <>
-      <div className='AddUser'>
-        <div className="container">
-          <div className='AddUser-inner'>
-            <h1 className='AddUser-heading'> Add User </h1>
+	const navigate = useNavigate();
 
-            <AddUserInputs />
-            
-            <footer className='footer'>
-              <button className='footer-button' type='submit'> Add User </button>
-            </footer>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className='AddUser'>
+				<div className='container'>
+					<div className='AddUser-inner'>
+						<h1 className='AddUser-heading'> Add User </h1>
+
+						<AddUserInputs />
+					</div>
+				</div>
+			</div>
+
+			<footer className='footer'>
+				<div className='container'>
+					<button
+						className='login__btn'
+						onClick={() => navigate('/users')}>
+						Add User
+					</button>
+				</div>
+			</footer>
+		</>
+	);
 }
 
 export default AddUser;

@@ -16,14 +16,14 @@ function ProfileMain({ setOpen }) {
 			<div className='profile-main'>
 				<ul className='profile-main__list'>
 					<li className='profile-main__item'>
-						<MenuItem icon={<UsersIcon />} text='Users' path='/' />
+						<MenuItem icon={<UsersIcon />} text='Users' path='/users' />
 					</li>
 
 					<li className='profile-main__item'>
 						<MenuItem
 							icon={<PhrasesIcon />}
 							text='Phrases'
-							path='/phrases'
+							path='/'
 						/>
 					</li>
 

@@ -1,7 +1,11 @@
 import React from 'react';
 import './ProfileLogOutModal.scss';
 
+import useToken from '../../Hooks/useToken';
+
 function ProfileLogOutModal({ setOpen }) {
+	const [, setToken] = useToken();
+
 	return (
 		<>
 			<div className='logout-modal'>
@@ -11,10 +15,7 @@ function ProfileLogOutModal({ setOpen }) {
 					</h3>
 
 					<label className='logout-modal__label'>
-						<input
-							className='logout-modal__checkbox'
-							type='checkbox'
-						/>
+						<input className='logout-modal__checkbox' type='checkbox' />
 						Remember my login info
 					</label>
 
@@ -25,7 +26,11 @@ function ProfileLogOutModal({ setOpen }) {
 							Cancel
 						</button>
 
-						<button className='logout-modal__button'>
+						<button
+							className='logout-modal__button'
+							onClick={() => {
+								setToken(false);
+							}}>
 							Log out
 						</button>
 					</div>

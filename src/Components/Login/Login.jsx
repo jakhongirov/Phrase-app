@@ -28,7 +28,7 @@ function Login() {
 			redirect: 'follow',
 		};
 
-		fetch( process.env.REACT_APP_API_URL 	+'/authToken', requestOptions)
+		fetch(process.env.REACT_APP_API_URL + '/authToken', requestOptions)
 			.then((response) => response.text())
 			.then((data) => setToken(data))
 			.catch((error) => console.log('error', error));
@@ -67,7 +67,7 @@ function Login() {
 								<span
 									className='password__see-btn'
 									ref={password}
-									onSubmit={(evt) => {
+									onClick={(evt) => {
 										setSee((prev) => !prev);
 										if (see) {
 											setType('text');
