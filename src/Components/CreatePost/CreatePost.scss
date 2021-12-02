@@ -1,0 +1,139 @@
+.container {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.createpost-heading {
+  display: flex;
+}
+
+.createpost-heading__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 28px;
+}
+
+.createpost-heading__vector {
+  border: none;
+  background-color: transparent;
+  margin-right: 94px;
+  margin-top: 10px;
+}
+
+.createpost-textarea {
+  width: 335px;
+  height: 248px;
+  padding: 19px 20px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.createpost-small__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  margin: 0;
+  margin-top: 21px;
+  margin-bottom: 12px;
+}
+
+.createpost-phrase {
+  width: 106px;
+  height: 35px;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #5F6471;
+}
+
+.createpost-phrase__name {
+  width: 114px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: rgba(95, 100, 113, 0.5);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.createpost-search {
+  width: 57px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.createpost-select {
+  width: 334px;
+  padding: 12px 11px 24px 25px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  border: none;
+  border-bottom: 0.8px solid rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+}
+
+.createpost-selected {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.createpost-select__option {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+
+.createpost-btn {
+  width: 160px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  padding: 18px 62px;
+  color: #FFFFFF;
+  background: #3D58E8;
+  border-radius: 10px;
+  border: none;
+  margin-top: 40px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}

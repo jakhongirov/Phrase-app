@@ -1,0 +1,131 @@
+.phrases-heading {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #000000;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 29px;
+}
+
+.phrases-heading__content {
+  display: flex;
+  align-items: center;
+}
+
+.phrases-heading__input {
+  width: 249px;
+  font-family: "Rubik";
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.3);
+  background: rgba(132, 140, 182, 0.15);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 17px 10px 14px 50px;
+  // padding-bottom: 14px;
+  background-image: url("../../Assets/Image/Search-icon.svg");
+  background-repeat: no-repeat;
+  background-position: calc(50% + -90px);
+}
+
+.phrases-heading__select {
+  padding: 15px 8px 16px 13px;
+  background: rgba(61, 88, 232, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  margin-left: 14px;
+}
+
+
+.phrases-list {
+  width: 420px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 25px;
+  overflow: auto;
+}
+
+.phrases-list__btn-first {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #000000;
+  border: none;
+  padding: 8px 29px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+}
+
+.phrases-list__btn {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: rgba(95, 100, 113, 0.5);
+  padding: 8px 29px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  border: none;
+}
+
+.second {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.phrases-social__btn {
+  width: 144px;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+
+.massage-btn {
+  width: 40px;
+  padding: 5px 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: none;
+}
+
+.bookmark-btn {
+  width: 40px;
+  padding: 5px 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: none;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.share-btn {
+  width: 40px;
+  padding: 5px 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: none;
+}
