@@ -6,6 +6,7 @@ import Profile from '../src/Pages/Profile/Profile.jsx';
 import Statistics from './Pages/Statistics/Statistics';
 import Users from './Pages/Users/Users';
 import AddUser from './Pages/AddUser/AddUser';
+import PostPage from './Pages/Post/Post';
 import { Routes, Route } from 'react-router-dom';
 
 function AuthenticatedApp() {
@@ -17,8 +18,9 @@ function AuthenticatedApp() {
 				<Route path='/users' element={<Users />} />
 				<Route path='/bookmarks' element={<Bookmarks />} />
 				<Route path='/profile' element={<Profile />} />
-				<Route path='/statistics' element={<Statistics />} />
+				<Route path='/statistics/*' element={<Statistics />} />
 				<Route path='/user/add' element={<AddUser />} />
+				<Route path='/post' element={<PostPage />} />
 			</Routes>
 		</>
 	);

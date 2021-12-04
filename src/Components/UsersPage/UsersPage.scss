@@ -1,10 +1,18 @@
-.users-page {
-  width: 100%;
-  height: 100%;
-	background: #fff;
+body .users-page .container {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	background-color: #fff;	
 }
 
-.user-page__inner {
+.users-page{
+	margin: 0;
+	margin-bottom: 50px;
+	background-color: #fff;	
+}
+
+.users-page__inner {
 	max-width: 320px;
 	margin-left: auto;
 	margin-right: auto;
@@ -16,14 +24,14 @@
 	justify-content: space-between;
 }
 
-.user-page__inner-button {
+.users-page__inner-button {
 	background-color: transparent;
 	border: transparent;
 }
 
-.user-page__inner-heading {
+.users-page__inner-heading {
 	margin: 0;
-	font-family: 'SFProDisplay', Arial, sans-serif;
+	font-family: 'SFProDisplay';
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 26px;
@@ -31,12 +39,12 @@
 	color: #000000;
 }
 
-.user-page__inner-span {
+.users-page__inner-span {
 	border: 1px solid transparent;
 	padding: 3px 11px;
 	background: rgba(148, 175, 182, 0.1);
 	border-radius: 5px;
-	font-family: 'Rubik', Arial, sans-serif;
+	font-family: 'Rubik';
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 17px;
@@ -45,14 +53,16 @@
 
 .users-page__hero {
 	margin-top: 28px;
+	background-color: #fff;	
 }
 
 .users-page__hero-input {
 	display: block;
-	width: 100%;
-	min-width: 300px;
+	width: 90%;
+	min-width: 250px;
+	margin: 0 auto;
 	padding: 10px 0 10px 50px;
-	font-family: 'Rubik', Arial, sans-serif;
+	font-family: 'Rubik';
 	font-size: 16px;
 	line-height: 19px;
 	color: rgba(0, 0, 0, 0.493);
@@ -70,16 +80,20 @@
 
 // ------------------ M A I N ----------------
 
-.user-page__main {
+.users-page__main {
+	width: 100%;
 	margin-top: 20px;
+	background-color: #fff;
 }
 
-.user-page__main-list {
+.users-page__main-list {
+	width: 100%;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
 }
 
-.user-page__main-item {
+.users-page__main-item {
 	display: flex;
 	list-style: none;
 	align-items: center;
@@ -89,7 +103,7 @@
 	}
 }
 
-.user-page__main-button {
+.users-page__main-button {
 	display: flex;
 	align-items: center;
 	border: transparent;
@@ -97,19 +111,19 @@
 	background-color: transparent;
 }
 
-.user-page__main-img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #e5e5e5e5;
+.users-page__main-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background-color: #e5e5e5e5;
 }
 
-.user-page__main-heading {
+.users-page__main-heading {
 	margin: 0;
-	font-family: 'SFProDisplay', Arial, sans-serif;
+	font-family: 'SFProDisplay';
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 17px;
@@ -117,8 +131,8 @@
 	margin-bottom: 3px;
 }
 
-.user-page__main-span {
-	font-family: 'SFProDisplay', Arial, sans-serif;
+.users-page__main-span {
+	font-family: 'SFProDisplay';
 	font-size: 14px;
 	line-height: 17px;
 	color: rgba(0, 0, 0, 0.5);
@@ -134,7 +148,7 @@
 	margin-top: 20px;
 }
 
-.user-page__main-inner {
+.users-page__main-inner {
 	margin-left: 15px;
 }
 

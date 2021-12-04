@@ -1,0 +1,104 @@
+.footer-component {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	min-width: 320px;
+	z-index: 10;
+	background-color: #fff;
+}
+
+.footer-component .container {
+	width: 100%;
+	max-width: 768px;
+	padding: 15px 20px 25px 20px;
+	background: #ffffff;
+	box-shadow: 0px -5px 15px rgba(105, 112, 149, 0.16);
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.btn__box {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 70%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 2;
+}
+
+.btn__plus {
+	width: 100%;
+	max-width: 60px;
+	height: 60px;
+	background: #3d58e8;
+	border: none;
+	border-radius: 50px;
+	font-size: 40px;
+	color: white;
+}
+
+.cicle__no {
+	position: absolute;
+	bottom: 48px;
+	left: 0;
+	right: 0;
+	width: 74px;
+	height: 74px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+	border-radius: 50px;
+	text-align: center;
+	opacity: 0.1;
+}
+
+.list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__list {
+	display: flex;
+	width: 100px;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.footer__items {
+	text-align: center;
+}
+
+.footer__items + .footer__items {
+	margin: 0;
+	margin-left: 25px;
+}
+
+.footer__items-btn {
+	background: transparent;
+	border: none;
+}
+
+.footer__heading {
+	display: flex;
+	font-family: 'SFProDisplay';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 14px;
+	display: flex;
+	align-items: center;		
+	color: #5f6471;
+}
+
+.footer__icons {
+	display: inline-block;
+	width: 20px;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}

@@ -19,7 +19,7 @@ function BookmarksMain() {
 		};
 
 		fetch(
-			process.env.REACT_APP_API_URL + '/saveds?page=1&limit=3',
+			process.env.REACT_APP_API_URL + '/saveds?page=1&limit=30',
 			requestOptions,
 		)
 			.then((response) => response.json())
@@ -41,7 +41,7 @@ function BookmarksMain() {
 								/>
 							</button>
 							<h1 className='bookmarks__heading'>Bookmarks</h1>
-							<p className='bookmarks__nums'>655</p>
+							<p className='bookmarks__nums'>{save.length}</p>
 						</div>
 
 						<div className='user'>
@@ -52,7 +52,7 @@ function BookmarksMain() {
 								width='80'
 								height='80'
 							/>
-							<h2 className='user__name'>David Jones</h2>
+							<h2 className='user__name'>Jakhongirov</h2>
 							<p className='user__info'>Author</p>
 						</div>
 
@@ -70,18 +70,16 @@ function BookmarksMain() {
 											/>
 											<div className='post__item-box2'>
 												<strong className='user__name user__name--font'>
-													John Doe
+													{row.fullname}
 												</strong>
 												<span className='user__info user__info--font'>
 													14***15
 												</span>
 											</div>
-											<span className='date'>11.12.21</span>
+											<span className='date'>{row.created_at}</span>
 										</div>
 										<p className='post__info'>
-											<strong>Lorem Ipsum -</strong> is simply dummy
-											text of the printing and typesetting industry.
-											Lorem Ipsum been industry's standard dummy.
+											{row.body}
 										</p>
 									</li>
 								))}
@@ -90,9 +88,6 @@ function BookmarksMain() {
 				</section>
 			</main>
 
-			<footer>
-				<div className='container'>laijslchahcoac</div>
-			</footer>
 		</>
 	);
 }

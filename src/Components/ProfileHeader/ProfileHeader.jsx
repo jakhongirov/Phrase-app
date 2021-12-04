@@ -17,7 +17,7 @@ function ProfileHeader() {
 
 						<div className='profile__user-info'>
 							<h3 className='profile__user-name'>
-								Robert Williams
+								Jakhongirov
 							</h3>
 
 							<span className='profile__user-password'>

@@ -6,7 +6,7 @@ import MenuItem from "../MenuItem/MenuItem";
 import PhrasesIcon from "../Lib/PhrasesIcon";
 import BookmarksIcon from "../Lib/BookmarksIcon";
 
-function UserBottom() {
+function UserBottom({user}) {
   return (
     <div className="user-page_bottom">
       <div className="container">
@@ -26,7 +26,7 @@ function UserBottom() {
         </div>
 
         <div className="user-page_bottom-btns">
-          <UserBtnRed />
+          <UserBtnRed user={user} />
           <UserBtnBlue />
         </div>
       </div>

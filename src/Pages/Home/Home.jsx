@@ -1,9 +1,12 @@
 import React from 'react';
+import Pharses from '../../Components/Phrases/Phrases';
+import Footer from '../../Components/Footer/Footer';
 
 function HomePage() {
 	return (
 		<>
-			<h1>lkhihg</h1>
+			<Pharses />
+			<Footer />
 		</>
 	);
 }

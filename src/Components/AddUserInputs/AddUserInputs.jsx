@@ -1,54 +1,96 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
+import React from 'react';
 import './AddUserInputs.scss';
+import { useNavigate } from 'react-router-dom';
 
 function AddUserInputs() {
-	const url = '';
+	const navigate = useNavigate();
 
-	const [data, setData] = useState({
-		name: '',
-		password: '',
-	});
+	const [input, setInput] = React.useState({});
 
-	function submit(evt) {
-		evt.preventDefault();
-		Axios.post(url, {
-			name: data.name,
-			password: data.password,
-		}).then((res) => {
-			console.log(res.data);
+	const apiPost = async () => {
+		const myHeaders = new Headers();
+		myHeaders.append(
+			'Authorization',
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
+		);
+		myHeaders.append('Content-Type', 'application/json');
+
+		const raw = JSON.stringify({
+			fullname: input.fullname,
+			username: input.username,
+			password: input.password,
 		});
-	}
 
-	function handle(evt) {
-		const newData = { ...data };
-		newData[evt.target.id] = evt.target.value;
-		setData(newData);
-		console.log(newData);
-	}
+		const requestOptions = {
+			method: 'POST',
+			headers: myHeaders,
+			body: raw,
+			redirect: 'follow',
+		};
+
+		await fetch(process.env.REACT_APP_API_URL + '/users', requestOptions)
+			.then((response) => response.json())
+			.then((result) => console.log(result))
+			.catch((error) => console.log('error', error));
+	};
+
+	const handleChange = (evt) => {
+		evt.persist();
+		setInput((input) => ({
+			...input,
+
+			[evt.target.name]: evt.target.value.trim(),
+		}));
+	};
+
+	const handleSubmit = (evt) => {
+		evt.preventDefault();
+		apiPost();
+	};
+
 	return (
 		<>
-			<form onSubmit={(evt) => submit(evt)} className='AddUser-form'>
+			<form onSubmit={handleSubmit} className='AddUser-form'>
 				<input
 					className='AddUser-form__username'
-					onChange={(evt) => handle(evt)}
-					id='name'
-					value={data.name}
+					onChange={handleChange}
+					type='text'
+					name='fullname'
+					placeholder='Full name'
+					required
+				/>
+
+				<input
+					className='AddUser-form__username'
+					onChange={handleChange}
 					type='text'
 					name='username'
 					placeholder='Username'
+					required
 				/>
 
 				<input
 					className='AddUser-form__password'
-					onChange={(evt) => handle(evt)}
-					id='password'
-					value={data.password}
+					onChange={handleChange}
 					type='password'
 					name='password'
 					placeholder='Password'
+					required
 				/>
 
+				<footer className='footer'>
+					<div className='container'>
+						<button
+							className='login__btn'
+							onClick={() =>
+								setTimeout(() => {
+									navigate('/users');
+								}, 1200)
+							}>
+							Add User
+						</button>
+					</div>
+				</footer>
 			</form>
 		</>
 	);

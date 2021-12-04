@@ -47,22 +47,30 @@
 }
 
 .pharse-name__btn {
-  background-color: rgb(187, 187, 187);
-  color: #000000;
-  padding: 8px 29px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(95, 100, 113, 0.5);
+  padding: 8px 9px;
   box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.04);
   border-radius: 5px;
   border: none;
   cursor: pointer;
+
+  
+  &:hover,
+  &.active {
+    background-color: #fff;
+    color: #222;
+  }
 }
 
-.pharse-name__btn-active {
+.Phrase-active__btn {
   background-color: #fff;
-  color: #000000;
+  color: #222;
 }
 
 .phrase {
-  margin-left: 24px;
+  margin-left: 14px;
 }
 
 .Weekly-inner {
@@ -71,22 +79,23 @@
   margin-bottom: 20px;
 }
 
-.Weekly-inner__btn {
-  padding: 7px 16px;
-  background: #FFFFFF;
-  border-radius: 5px;
+.Weekly-inner__link {
+  text-decoration: none;
   font-family: 'SF Pro Display', Arial, sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.3);
-  border: none;
-  cursor: pointer;
-}
+  border: 1px solid transparent;
+  background-color: #fff;
+  padding: 7px 16px;
+  border-radius: 10px;
 
-.Weekly-inner__btn-active {
-  background-color: #3D58E8;
-  color: #fff;
+  &:hover,
+  &.active {
+    background-color: #3D58E8;
+    color: #fff;
+  }
 }
 
 .total-phrases {
@@ -96,7 +105,7 @@
   margin-top: 20px;
 }
 
-.total-phrases__ {
+.total-phrases__text {
   font-size: 16px;
   line-height: 19px;
 }
@@ -104,6 +113,7 @@
 .total-phrases__item {
   margin: 0;
   padding: 0;
+  text-align: initial;
 }
 
 .total-phrases__span {

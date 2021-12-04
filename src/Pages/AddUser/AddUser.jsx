@@ -1,10 +1,9 @@
 import React from 'react';
 import './AddUser.scss';
-import { useNavigate } from 'react-router-dom';
+
 import AddUserInputs from '../../Components/AddUserInputs/AddUserInputs';
 
 function AddUser() {
-	const navigate = useNavigate();
 
 	return (
 		<>
@@ -17,16 +16,6 @@ function AddUser() {
 					</div>
 				</div>
 			</div>
-
-			<footer className='footer'>
-				<div className='container'>
-					<button
-						className='login__btn'
-						onClick={() => navigate('/users')}>
-						Add User
-					</button>
-				</div>
-			</footer>
 		</>
 	);
 }
