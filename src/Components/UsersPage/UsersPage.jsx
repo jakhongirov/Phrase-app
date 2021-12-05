@@ -39,7 +39,9 @@ function UsersPage() {
 				<div className='container'>
 					<div className='users-page__inner'>
 						<div className='users-page__content'>
-							<button className='users-page__inner-button'>
+							<button
+								className='users-page__inner-button'
+								onClick={() => navigate(-1)}>
 								<img
 									className='users-page__inner-img'
 									src={arrowLeftBtn}
@@ -61,7 +63,7 @@ function UsersPage() {
 								type='search'
 								placeholder='Search'
 								name='search'
-								onChange={(evt)=> setSearch(evt.target.value.trim())}
+								onChange={(evt) => setSearch(evt.target.value.trim())}
 							/>
 						</div>
 
@@ -69,7 +71,9 @@ function UsersPage() {
 							<ul className='users-page__main-list'>
 								{user.length > 0 &&
 									user.map((row) => (
-										<li key={row.id} className='users-page__main-item'>
+										<li
+											key={row.id}
+											className='users-page__main-item'>
 											<button
 												className='users-page__main-button'
 												onClick={() => navigate('/user/' + row.id)}>

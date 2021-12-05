@@ -6,8 +6,7 @@ import Share from '../../Assets/Image/share-icon.svg';
 
 function Phrases() {
 	const [phrases, setPhrases] = React.useState([]);
-	const [search, setSearch] = React.useState('i');
-	const [save, setSave] = React.useState(false);
+	// const [search, setSearch] = React.useState('i');
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
@@ -102,9 +101,9 @@ function Phrases() {
 									type='search'
 									name='search'
 									placeholder='Search'
-									onChange={(evt) =>
-										setSearch(evt.target.value.trim())
-									}
+									// onChange={(evt) =>
+									// 	setSearch(evt.target.value.trim())
+									// }
 									// onKeyDown={(evt) => {
 									// 	if (evt.code === 'Enter') {
 									// 		searchApi();
