@@ -1,9 +1,11 @@
 import React from 'react';
 import './BookmarksMain.scss';
+import { useNavigate } from 'react-router-dom';
 import backIcon from '../../Assets/Image/arrow-left-back.svg';
 
 function BookmarksMain() {
 	const [save, setSave] = React.useState([]);
+	const navigate = useNavigate();
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
@@ -32,7 +34,9 @@ function BookmarksMain() {
 				<section className='bookmarks'>
 					<div className='container'>
 						<div className='bookmarks__box-top'>
-							<button className='bookmarks__back-btn'>
+							<button
+								className='bookmarks__back-btn'
+								onClick={() => navigate(-1)}>
 								<img
 									src={backIcon}
 									alt='arrow left back icon'
@@ -78,16 +82,13 @@ function BookmarksMain() {
 											</div>
 											<span className='date'>{row.created_at}</span>
 										</div>
-										<p className='post__info'>
-											{row.body}
-										</p>
+										<p className='post__info'>{row.body}</p>
 									</li>
 								))}
 						</ul>
 					</div>
 				</section>
 			</main>
-
 		</>
 	);
 }

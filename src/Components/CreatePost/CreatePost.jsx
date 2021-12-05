@@ -57,7 +57,9 @@ function CreatePost() {
 			<form onSubmit={handleSubmit}>
 				<div className='container'>
 					<div className='createpost-heading'>
-						<button className='createpost-heading__vector' type='button'>
+						<button
+							className='createpost-heading__vector'
+							onClick={() => navigate(-1)}>
 							<img src={Vector} alt='Vector icon' />
 						</button>
 						<h1 className='createpost-heading__title'>Create post</h1>
@@ -70,13 +72,11 @@ function CreatePost() {
 					/>
 					<h2 className='createpost-small__title'>Select the hashtags </h2>
 					<div>
-						<button className='createpost-phrase' type='button'>
-							#Phrase
-						</button>
-						<button className='createpost-phrase__name' type='button'>
+						<button className='createpost-phrase'>#Phrase</button>
+						<button className='createpost-phrase__name'>
 							#Phrase name
 						</button>
-						<button className='createpost-search' type='button'>
+						<button className='createpost-search'>
 							<img src={Search} alt='Search icon' />
 						</button>
 					</div>
