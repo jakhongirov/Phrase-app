@@ -7,8 +7,6 @@ import Statistics from './Pages/Statistics/Statistics';
 import Users from './Pages/Users/Users';
 import AddUser from './Pages/AddUser/AddUser';
 import PostPage from './Pages/Post/Post';
-import UserPhrases from './Components/UserPhrases/UserPhrases';
-import UserSave from './Components/UserSave/UserSave';
 import { Routes, Route } from 'react-router-dom';
 
 function AuthenticatedApp() {
@@ -23,8 +21,6 @@ function AuthenticatedApp() {
 				<Route path='/statistics/*' element={<Statistics />} />
 				<Route path='/user/add' element={<AddUser />} />
 				<Route path='/post' element={<PostPage />} />
-				<Route path='/phrases/:id' element={<UserPhrases />} />
-				<Route path='/saved/:id' element={<UserSave />} />
 			</Routes>
 		</>
 	);

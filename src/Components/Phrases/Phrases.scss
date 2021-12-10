@@ -18,8 +18,7 @@
 }
 
 .phrases-heading__input {
-	width: 250px;
-	min-width: 220px;
+	min-width: 249px;
 	padding: 17px 10px 14px 50px;
 	font-family: 'Rubik';
 	font-size: 16px;
@@ -52,6 +51,7 @@
 
 .phrases-list {
 	min-width: 320px;
+	overflow: auto;
 	padding: 0;
 	display: flex;
 	align-items: center;
@@ -59,21 +59,26 @@
 	margin-top: 16px;
 	margin-bottom: 25px;
 	list-style: none;
-	overflow: auto;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
 }
 
-.phrases-list__item {
+.phrases-list__item + .phrases-list__item {
 	margin: 0;
-	margin-left: 15px;
+	margin-left: 10px;
 }
 
-.phrases-list__btn {
-	width: 100%;
-	min-width: 165px;
+.phrases-list__item:nth-child(1) {
+	min-width: 156px;
+}
+
+.phrases-list__item:nth-child(2) {
+	min-width: 106px;
+}
+
+.phrases-list__item:nth-child(3) {
+	min-width: 156px;
+}
+
+.phrases-list__btn-first {
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: normal;
@@ -83,8 +88,28 @@
 	color: #000000;
 	border: none;
 	padding: 8px 29px;
+	background-color: #ffffff;
 	box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.04);
 	border-radius: 5px;
+}
+
+.phrases-list__btn {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	color: rgba(95, 100, 113, 0.5);
+	padding: 8px 29px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	border: none;
+}
+
+.second {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .phreses-post__list {
@@ -103,33 +128,23 @@
 .phreses-post__item-box {
 	display: block;
 	margin: 0;
-	margin: 10px;
 	padding: 10px;
 	background: #ffffff;
 	border-radius: 5px;
 }
 
 .phrases-social__btn {
-	display: flex;
-	width: 110px;
+	width: 144px;
 	margin-left: auto;
-
-	&--width{
-		width: 60px;
-	}
+	margin-top: 10px;
 }
 
-.delete-btn {
+.massage-btn {
 	width: 40px;
 	padding: 5px 10px;
 	background: #ffffff;
 	border-radius: 5px;
 	border: none;
-
-	&:active {
-		background-color: #000;
-		opacity: 0.2;
-	}
 }
 
 .bookmark-btn {
@@ -139,9 +154,18 @@
 	border-radius: 5px;
 	border: none;
 	margin-left: 12px;
+	margin-right: 12px;
 
 	&:active {
 		background-color: #000;
 		opacity: 0.2;
 	}
+}
+
+.share-btn {
+	width: 40px;
+	padding: 5px 10px;
+	background: #ffffff;
+	border-radius: 5px;
+	border: none;
 }
