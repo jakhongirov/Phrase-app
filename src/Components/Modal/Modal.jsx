@@ -5,21 +5,19 @@ import { useNavigate } from 'react-router-dom';
 function Modal({ show, onClose, user }) {
 	const navigate = useNavigate();
 
-	// const [input, setInput] = React.useState({});
-
 	const apiPost = async () => {
-		var myHeaders = new Headers();
+		const myHeaders = new Headers();
 		myHeaders.append(
 			'Authorization',
 			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
 		);
 		myHeaders.append('Content-Type', 'application/json');
 
-		var raw = JSON.stringify({
+		const raw = JSON.stringify({
 			id: user.id,
 		});
 
-		var requestOptions = {
+		const requestOptions = {
 			method: 'DELETE',
 			headers: myHeaders,
 			body: raw,
