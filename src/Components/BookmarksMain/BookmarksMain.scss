@@ -8,6 +8,10 @@
 	margin: 0;
 	margin-bottom: 17px;
 	align-self: center;
+
+	&--content{
+		display: block;
+	}
 }
 
 .bookmarks__back-btn {
@@ -16,6 +20,10 @@
 	height: 30px;
 	border: none;
 	background-color: transparent;
+
+	&--margin{
+		margin-right: auto;
+	}
 }
 
 .bookmarks__heading {
@@ -106,7 +114,6 @@
    margin: 0;
    margin-bottom: 18px;
    padding: 20px;
-	background: #ffffff;
 	border-radius: 5px;  
 }
 
