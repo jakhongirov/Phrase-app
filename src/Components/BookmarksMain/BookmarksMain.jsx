@@ -61,7 +61,7 @@ function BookmarksMain() {
 			.then((response) => response.json())
 			.then((result) => setSave(result.data))
 			.catch((error) => console.log('error', error));
-	}, [handleDelete]);
+	}, []);
 
 	return (
 		<>
