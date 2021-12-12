@@ -62,6 +62,7 @@ function Phrases() {
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
 	}, [search, handleDeleted]);
+	
 
 	const saveAPI = async (id) => {
 		const myHeaders = new Headers();
