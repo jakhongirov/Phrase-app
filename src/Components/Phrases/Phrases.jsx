@@ -61,7 +61,7 @@ function Phrases() {
 			.then((response) => response.json())
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
-	}, [search, handleDeleted]);
+	}, [search,]);
 	
 
 	const saveAPI = async (id) => {
