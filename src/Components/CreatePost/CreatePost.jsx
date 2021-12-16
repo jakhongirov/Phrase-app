@@ -1,11 +1,13 @@
 import React from 'react';
 import './CreatePost.scss';
 import { useNavigate } from 'react-router-dom';
+import { useAlert } from 'react-alert';
 import Search from '../../Assets/Image/Search-icon.svg';
 import Vector from '../../Assets/Image/create-post-vector.svg';
 
 function CreatePost() {
 	const navigate = useNavigate();
+	const alert = useAlert();
 
 	const [input, setInput] = React.useState({});
 
@@ -99,7 +101,8 @@ function CreatePost() {
 						onClick={() =>
 							setTimeout(() => {
 								navigate('/');
-							}, 1200)
+								alert.success('Created Phrases');
+							}, 1500)
 						}>
 						Post
 					</button>

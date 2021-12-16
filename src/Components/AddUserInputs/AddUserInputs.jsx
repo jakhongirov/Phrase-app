@@ -1,9 +1,11 @@
 import React from 'react';
 import './AddUserInputs.scss';
+import { useAlert } from 'react-alert';
 import { useNavigate } from 'react-router-dom';
 
 function AddUserInputs() {
 	const navigate = useNavigate();
+	const alert = useAlert();
 
 	const [input, setInput] = React.useState({});
 
@@ -85,6 +87,7 @@ function AddUserInputs() {
 							onClick={() =>
 								setTimeout(() => {
 									navigate('/users');
+									alert.success('Added user');
 								}, 1200)
 							}>
 							Add User

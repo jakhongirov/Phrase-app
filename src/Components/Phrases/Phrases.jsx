@@ -1,44 +1,17 @@
 import React from 'react';
+import { useAlert } from 'react-alert';
 import './Phrases.scss';
 import date from '../../Context/date';
+import PhrasesModal from '../PhrasesModal/PhrasesModal';
 
 import deleteIcon from '../../Assets/Image/delete.svg';
 import Bookmark from '../../Assets/Image/bookmark-icon.svg';
 
 function Phrases() {
+	const alert = useAlert();
 	const [phrases, setPhrases] = React.useState([]);
 	const [search, setSearch] = React.useState('');
-
-	const deleteAPI = async (id) => {
-		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
-		myHeaders.append('Content-Type', 'application/json');
-
-		const raw = JSON.stringify({
-			id: id,
-		});
-
-		const requestOptions = {
-			method: 'DELETE',
-			headers: myHeaders,
-			body: raw,
-			redirect: 'follow',
-		};
-
-		await fetch(process.env.REACT_APP_API_URL + '/phrases', requestOptions)
-			.then((response) => response.json())
-			.then((result) => console.log(result))
-			.catch((error) => console.log('error', error));
-	};
-
-	const handleDeleted = (evt) => {
-		evt.preventDefault();
-		const deleteId = evt.target.dataset.saveId - 0;
-		deleteAPI(deleteId);
-	};
+	const [show, setShow] = React.useState(false);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
@@ -61,8 +34,7 @@ function Phrases() {
 			.then((response) => response.json())
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
-	}, [search,]);
-	
+	}, [search]);
 
 	const saveAPI = async (id) => {
 		const myHeaders = new Headers();
@@ -91,8 +63,9 @@ function Phrases() {
 
 	const handleBookmarks = (evt) => {
 		evt.preventDefault();
-		const saveId = evt.target.dataset.saveId - 0;
+		const saveId = evt.currentTarget.dataset.saveId - 0;
 		saveAPI(saveId);
+		alert.success(`Saved Phrases`);
 	};
 
 	return (
@@ -162,18 +135,18 @@ function Phrases() {
 										</div>
 
 										<div className='phrases-social__btn'>
-											<form onClick={handleDeleted}>
-												<button
-													className='delete-btn'
-													data-save-id={row.id}>
-													<img
-														src={deleteIcon}
-														alt='Massage icon'
-														width='17'
-														height='17'
-													/>
-												</button>
-											</form>
+											<button
+												className='delete-btn'
+												data-save-id={row.id}
+												onClick={() => setShow((prev) => !prev)}>
+												<img
+													src={deleteIcon}
+													alt='Delete icon'
+													width='17'
+													height='17'
+												/>
+											</button>
+
 											<button
 												onClick={handleBookmarks}
 												className='bookmark-btn'
@@ -186,6 +159,12 @@ function Phrases() {
 												/>
 											</button>
 										</div>
+
+										<PhrasesModal
+											id={row.id}
+											show={show}
+											onClose={() => setShow(false)}
+										/>
 									</li>
 								))}
 						</ul>
