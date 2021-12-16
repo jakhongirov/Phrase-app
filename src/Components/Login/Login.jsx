@@ -39,7 +39,8 @@ function Login() {
 			<form
 				className='login__input-box'
 				method='POST'
-				onSubmit={handleSubmit}>
+				onSubmit={handleSubmit}
+				autoCapitalize='off'>
 				<main className='main'>
 					<section className='login'>
 						<div className='container'>
@@ -52,6 +53,8 @@ function Login() {
 									placeholder='Username'
 									name='username'
 									required
+									autoComplete='off'
+									autoCapitalize='off'	
 								/>
 							</div>
 
@@ -62,6 +65,8 @@ function Login() {
 									placeholder='Password'
 									name='password'
 									required
+									autoComplete='off'
+									autoCapitalize='off'
 								/>
 
 								<span

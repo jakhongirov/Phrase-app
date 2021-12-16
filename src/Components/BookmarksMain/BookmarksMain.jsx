@@ -2,6 +2,7 @@ import React from 'react';
 import './BookmarksMain.scss';
 import { useNavigate } from 'react-router-dom';
 import date from '../../Context/date';
+import SavedModal from '../SavedModal/SavedModal';
 
 import backIcon from '../../Assets/Image/arrow-left-back.svg';
 import deleteIcon from '../../Assets/Image/delete.svg';
@@ -9,37 +10,7 @@ import deleteIcon from '../../Assets/Image/delete.svg';
 function BookmarksMain() {
 	const [save, setSave] = React.useState([]);
 	const navigate = useNavigate();
-
-	const deleteAPI = async (id) => {
-		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
-		myHeaders.append('Content-Type', 'application/json');
-
-		const raw = JSON.stringify({
-			phrase_id: id,
-		});
-
-		const requestOptions = {
-			method: 'POST',
-			headers: myHeaders,
-			body: raw,
-			redirect: 'follow',
-		};
-
-		await fetch(process.env.REACT_APP_API_URL + '/saveds', requestOptions)
-			.then((response) => response.json())
-			.then((result) => console.log(result))
-			.catch((error) => console.log('error', error));
-	};
-
-	const handleDelete = (evt) => {
-		evt.preventDefault();
-		const deleteId = evt.target.dataset.saveId - 0;
-		deleteAPI(deleteId);
-	};
+	const [show, setShow] = React.useState(false);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
@@ -123,20 +94,22 @@ function BookmarksMain() {
 											<p className='post__info'>{row.body}</p>
 										</div>
 										<div className='phrases-social__btn phrases-social__btn--width'>
-											<form>
-												<button
-													className='delete-btn'
-													data-save-id={row.id}
-													onClick={handleDelete}>
-													<img
-														src={deleteIcon}
-														alt='Massage icon'
-														width={17}
-														height={17}
-													/>
-												</button>
-											</form>
+											<button
+												className='delete-btn'
+												onClick={() => setShow((prev) => !prev)}>
+												<img
+													src={deleteIcon}
+													alt='Massage icon'
+													width={17}
+													height={17}
+												/>
+											</button>
 										</div>
+										<SavedModal
+											id={row.id}
+											show={show}
+											onClose={() => setShow(false)}
+										/>
 									</li>
 								))}
 						</ul>

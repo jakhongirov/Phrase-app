@@ -50,7 +50,7 @@ function UsersPage() {
 									height='24'
 								/>
 							</button>
-							<h2 className='users-page__inner-heading'>Users</h2>
+							<h1 className='users-page__inner-heading'>Users</h1>
 							<span className='users-page__inner-span'>
 								{' '}
 								{user.length}{' '}

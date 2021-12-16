@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Home from '../Lib/Home';
 import Plus from '../Lib/plus';
 import Profile from '../Lib/Profile';
-import Settings from '../Lib/settings';
+import userIcon from '../../Assets/Image/group.png';
 import Statistics from '../Lib/Statistics';
 
 function Footer() {
@@ -28,9 +28,14 @@ function Footer() {
 							<li className='footer__item item__left'>
 								<button
 									className='item__btn'
-									onClick={() => navigate('/settings')}>
-									<Settings />
-									<span className='vreminiy'>Settings</span>
+									onClick={() => navigate('/Users')}>
+									<img
+										src={userIcon}
+										alt='user Icon'
+										width='24'
+										height='24'
+									/>
+									<span className='vreminiy'>Users</span>
 								</button>
 							</li>
 							<li className='footer__item'>
