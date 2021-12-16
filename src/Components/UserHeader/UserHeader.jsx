@@ -10,7 +10,7 @@ function UserHeader({ user }) {
 	return (
 		<div className='user-page_top'>
 			<div className='container'>
-				<div className='bookmarks__box-top'>
+				<div className='bookmarks__box-top bookmarks__box-top--content'>
 					<button
 						className='bookmarks__back-btn'
 						onClick={() => navigate(-1)}>
