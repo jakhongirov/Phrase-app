@@ -1,11 +1,12 @@
 import React from 'react';
-// import './Phrases.scss';
 import date from '../../Context/date';
 import { useNavigate, useParams } from 'react-router-dom';
+import useToken from '../../Hooks/useToken';
 
 import backIcon from '../../Assets/Image/arrow-left-back.svg';
 
 function UserPhrases() {
+	const [token] = useToken();
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [phrases, setPhrases] = React.useState([]);
@@ -13,10 +14,7 @@ function UserPhrases() {
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const raw = '';
 

@@ -1,21 +1,20 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import date from '../../Context/date';
+import useToken from '../../Hooks/useToken';
 
 import backIcon from '../../Assets/Image/arrow-left-back.svg';
 
 function UserSave() {
+	const [token] = useToken();
 	const [save, setSave] = React.useState([]);
-   const [user, setUser] = React.useState([]);
+	const [user, setUser] = React.useState([]);
 	const navigate = useNavigate();
 	const { id } = useParams();
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const raw = '';
 
@@ -36,7 +35,7 @@ function UserSave() {
 			.catch((error) => console.log('error', error));
 	}, [id]);
 
-   React.useEffect(() => {
+	React.useEffect(() => {
 		const myHeaders = new Headers();
 		myHeaders.append(
 			'Authorization',
@@ -54,7 +53,6 @@ function UserSave() {
 			.then((result) => setUser(result.data))
 			.catch((error) => console.log('error', error));
 	}, [id]);
-
 
 	return (
 		<>

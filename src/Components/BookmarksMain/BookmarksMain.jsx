@@ -1,6 +1,7 @@
 import React from 'react';
 import './BookmarksMain.scss';
 import { useNavigate } from 'react-router-dom';
+import useToken from '../../Hooks/useToken';
 import date from '../../Context/date';
 import SavedModal from '../SavedModal/SavedModal';
 
@@ -8,16 +9,14 @@ import backIcon from '../../Assets/Image/arrow-left-back.svg';
 import deleteIcon from '../../Assets/Image/delete.svg';
 
 function BookmarksMain() {
+	const [token] = useToken();
 	const [save, setSave] = React.useState([]);
 	const navigate = useNavigate();
 	const [show, setShow] = React.useState(false);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const requestOptions = {
 			method: 'GET',
@@ -62,7 +61,7 @@ function BookmarksMain() {
 								width='80'
 								height='80'
 							/>
-							<h2 className='user__name'>Jakhongirov</h2>
+							<h2 className='user__name'>{token.data.user.fullname}</h2>
 							<p className='user__info'>Author</p>
 						</div>
 

@@ -2,23 +2,23 @@ import React from 'react';
 import { useAlert } from 'react-alert';
 import './Phrases.scss';
 import date from '../../Context/date';
+import useToken from '../../Hooks/useToken';
 import PhrasesModal from '../PhrasesModal/PhrasesModal';
 
 import deleteIcon from '../../Assets/Image/delete.svg';
 import Bookmark from '../../Assets/Image/bookmark-icon.svg';
 
 function Phrases() {
+	const [token] = useToken();
 	const alert = useAlert();
 	const [phrases, setPhrases] = React.useState([]);
 	const [search, setSearch] = React.useState('');
 	const [show, setShow] = React.useState(false);
 
+	//Phrases
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const requestOptions = {
 			method: 'GET',
@@ -28,7 +28,7 @@ function Phrases() {
 
 		fetch(
 			process.env.REACT_APP_API_URL +
-				`/phrases/search?q=${search}&page=1&limit=20`,
+				`/phrases/search?q=${search}&page=1&limit=2`,
 			requestOptions,
 		)
 			.then((response) => response.json())
@@ -36,12 +36,10 @@ function Phrases() {
 			.catch((error) => console.log('error', error));
 	}, [search]);
 
+	//Add Bookmarks
 	const saveAPI = async (id) => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 		myHeaders.append('Content-Type', 'application/json');
 
 		const raw = JSON.stringify({
@@ -80,6 +78,8 @@ function Phrases() {
 								type='search'
 								name='search'
 								placeholder='Search'
+								autoComplete='off'
+								autoCapitalize='off'
 								onChange={(evt) => setSearch(evt.target.value.trim())}
 							/>
 							<select className='phrases-heading__select' name='select'>
@@ -121,7 +121,7 @@ function Phrases() {
 												/>
 												<div className='post__item-box2'>
 													<strong className='user__name user__name--font'>
-														{row.fullname}
+														{row.user.fullname}
 													</strong>
 													<span className='user__info user__info--font'>
 														14***15

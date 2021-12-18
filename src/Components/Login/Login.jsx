@@ -18,7 +18,7 @@ function Login() {
 
 		const raw = JSON.stringify({
 			username: username.value.trim(),
-			password: password.value.trim(),
+			password: password.value.trim().toLowerCase(),
 		});
 
 		const requestOptions = {
@@ -28,8 +28,8 @@ function Login() {
 			redirect: 'follow',
 		};
 
-		fetch(process.env.REACT_APP_API_URL + '/authToken', requestOptions)
-			.then((response) => response.text())
+		fetch(process.env.REACT_APP_API_URL + '/login', requestOptions)
+			.then((response) => response.json())
 			.then((data) => setToken(data))
 			.catch((error) => console.log('error', error));
 	};
@@ -54,7 +54,7 @@ function Login() {
 									name='username'
 									required
 									autoComplete='off'
-									autoCapitalize='off'	
+									autoCapitalize='off'
 								/>
 							</div>
 
