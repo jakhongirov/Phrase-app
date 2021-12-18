@@ -47,31 +47,14 @@ function StatisticsPage() {
 						</div>
 
 						<Routes>
-							<Route path='/statistics' element={<Navigate to='/Weekly' />} />
+							<Route
+								path='/statistics'
+								element={<Navigate to='/Weekly' />}
+							/>
 							<Route path='/Weekly' element={<Diagramm />} />
 							<Route path='/Monthly' element={<MonthDiagramm />} />
 							<Route path='/Yearly' element={<YearDiagramm />} />
 						</Routes>
-
-						{/* <Diagramm /> */}
-
-						<ul className='total-phrases'>
-							<li className='total-phrases__item'>
-								<p className='total-phrases__text'>
-									{' '}
-									Total phrases -{' '}
-									<span className='total-phrases__span'> 458 </span>
-								</p>
-							</li>
-
-							<li className='total-phrases__item'>
-								<p className='total-phrases__text'>
-									{' '}
-									Added phrases -{' '}
-									<span className='total-phrases__span'> 60 </span>
-								</p>
-							</li>
-						</ul>
 					</div>
 				</div>
 			</div>

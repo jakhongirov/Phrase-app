@@ -4,12 +4,12 @@ const Context = React.createContext();
 
 function Provider({ children }) {
 	const [state, setState] = React.useState(
-		window.localStorage.getItem('token') || false,
+		JSON.parse(window.localStorage.getItem('token')) || false,
 	);
 
 	React.useEffect(() => {
 		if (state) {
-			window.localStorage.setItem('token', state);
+			window.localStorage.setItem('token', JSON.stringify(state));
 		} else {
 			window.localStorage.removeItem('token');
 		}

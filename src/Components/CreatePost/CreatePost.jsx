@@ -1,11 +1,13 @@
 import React from 'react';
 import './CreatePost.scss';
+import useToken from '../../Hooks/useToken';
 import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import Search from '../../Assets/Image/Search-icon.svg';
 import Vector from '../../Assets/Image/create-post-vector.svg';
 
 function CreatePost() {
+	const [token] = useToken();
 	const navigate = useNavigate();
 	const alert = useAlert();
 
@@ -13,10 +15,7 @@ function CreatePost() {
 
 	const apiPost = async () => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
-		);
+		myHeaders.append('Authorization', token.data.token);
 		myHeaders.append('Content-Type', 'application/json');
 
 		const raw = JSON.stringify({
@@ -86,7 +85,7 @@ function CreatePost() {
 						className='createpost-select'
 						name='hashtags'
 						onChange={handleChange}>
-						<option className='createpost-selected' value='1' selected>
+						<option className='createpost-selected' value='1'>
 							Everyone can reply
 						</option>
 						<option className='createpost-select__option' value='2'>

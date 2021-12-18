@@ -13,7 +13,7 @@ function AddUserInputs() {
 		const myHeaders = new Headers();
 		myHeaders.append(
 			'Authorization',
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJKb2huIERvZSIsInVzZXJuYW1lIjoiam9obiIsImlzX2FkbWluIjp0cnVlLCJpc19kZWxldGVkIjpmYWxzZSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDFUMTQ6NDU6MzAuNjYwWiIsImlhdCI6MTYzNTkyNDcxMX0.-jVzkIhtVb1CHot8YBQTe7_EiQjQawqCo7Tuem1XXHo',
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImZ1bGxuYW1lIjoiamFraG9uZ2lyb3YiLCJ1c2VybmFtZSI6Impha2hvbmdpcm92IiwiaXNfYWRtaW4iOnRydWUsImlzX2RlbGV0ZWQiOmZhbHNlLCJjcmVhdGVkX2F0IjoiMjAyMS0xMi0xN1QxMzozNzo1MS41MzZaIiwiaWF0IjoxNjM5ODAyNzc0fQ.gPZqOC3dKfMx2rmE1tLB_9VFv6Rtns0ZLIpQO6Qjmw8',
 		);
 		myHeaders.append('Content-Type', 'application/json');
 
@@ -60,6 +60,8 @@ function AddUserInputs() {
 					name='fullname'
 					placeholder='Full name'
 					required
+					autoCapitalize='off'
+					autoComplete='off'
 				/>
 
 				<input
@@ -69,6 +71,8 @@ function AddUserInputs() {
 					name='username'
 					placeholder='Username'
 					required
+					autoCapitalize='off'
+					autoComplete='off'
 				/>
 
 				<input
@@ -78,6 +82,8 @@ function AddUserInputs() {
 					name='password'
 					placeholder='Password'
 					required
+					autoCapitalize='off'
+					autoComplete='off'
 				/>
 
 				<footer className='footer'>
