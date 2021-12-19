@@ -6,18 +6,15 @@ import UserBottom from '../../Components/UserBottom/UserBottom';
 import useToken from '../../Hooks/useToken';
 
 function UserPage() {
-	const [token] = useToken()
+	const [token] = useToken();
 	const { id } = useParams();
 	const [user, setUser] = React.useState([]);
 	const [phrases, setPhrases] = React.useState([]);
 	const [save, setSave] = React.useState([]);
-	
+
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			token.data.token
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const requestOptions = {
 			method: 'GET',
@@ -29,14 +26,11 @@ function UserPage() {
 			.then((response) => response.json())
 			.then((result) => setUser(result.data))
 			.catch((error) => console.log('error', error));
-	}, [id]);
+	}, [token, id]);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append(
-			'Authorization',
-			token.data.token
-		);
+		myHeaders.append('Authorization', token.data.token);
 
 		const raw = '';
 
@@ -55,7 +49,7 @@ function UserPage() {
 			.then((response) => response.text())
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
-	}, [id]);
+	}, [token, id]);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();

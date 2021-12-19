@@ -16,7 +16,7 @@ function BookmarksMain() {
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
-		myHeaders.append('Authorization', token.data.token);
+		myHeaders.append('Authorization', token?.data.token);
 
 		const requestOptions = {
 			method: 'GET',
@@ -31,7 +31,7 @@ function BookmarksMain() {
 			.then((response) => response.json())
 			.then((result) => setSave(result.data))
 			.catch((error) => console.log('error', error));
-	}, []);
+	}, [token]);
 
 	return (
 		<>

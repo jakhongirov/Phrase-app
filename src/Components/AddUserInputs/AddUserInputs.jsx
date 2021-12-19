@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 function AddUserInputs() {
 	const navigate = useNavigate();
 	const alert = useAlert();
-
 	const [input, setInput] = React.useState({});
 
 	const apiPost = async () => {
@@ -55,7 +54,7 @@ function AddUserInputs() {
 			<form onSubmit={handleSubmit} className='AddUser-form'>
 				<input
 					className='AddUser-form__username'
-					onChange={handleChange}
+					onChange={handleChange}m
 					type='text'
 					name='fullname'
 					placeholder='Full name'

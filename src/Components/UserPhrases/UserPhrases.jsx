@@ -33,7 +33,7 @@ function UserPhrases() {
 			.then((response) => response.text())
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
-	}, [id]);
+	}, [token, id]);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
