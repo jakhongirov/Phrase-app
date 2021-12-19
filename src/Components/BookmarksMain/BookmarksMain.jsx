@@ -80,7 +80,7 @@ function BookmarksMain() {
 												/>
 												<div className='post__item-box2'>
 													<strong className='user__name user__name--font'>
-														{row.fullname}
+														{row.user.fullname}
 													</strong>
 													<span className='user__info user__info--font'>
 														14***15
