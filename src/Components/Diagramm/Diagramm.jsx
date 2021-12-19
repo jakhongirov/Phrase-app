@@ -21,7 +21,7 @@ function Diagramm() {
 			.then((response) => response.json())
 			.then((result) => setState(result.data))
 			.catch((error) => console.log('error', error));
-	}, []);
+	}, [token]);
 
 	return (
 		<>

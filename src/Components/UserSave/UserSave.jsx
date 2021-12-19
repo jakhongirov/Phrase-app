@@ -33,7 +33,7 @@ function UserSave() {
 			.then((response) => response.text())
 			.then((result) => setSave(result.data))
 			.catch((error) => console.log('error', error));
-	}, [id]);
+	}, [token, id]);
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
