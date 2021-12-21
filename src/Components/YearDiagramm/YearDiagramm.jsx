@@ -16,7 +16,7 @@ function YearDiagramm() {
 			redirect: 'follow',
 		};
 
-		fetch(process.env.REACT_APP_API_URL + '/users/yearly', requestOptions)
+		fetch(process.env.REACT_APP_API_URL + '/phrases/yearly/' + token.data.user.id , requestOptions)
 			.then((response) => response.json())
 			.then((result) => setState(result.data))
 			.catch((error) => console.log('error', error));
@@ -68,7 +68,7 @@ function YearDiagramm() {
 						Total phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.total_users}
+							{state?.total_prases}
 						</span>
 					</p>
 				</li>
@@ -78,7 +78,7 @@ function YearDiagramm() {
 						Added phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.current_users}{' '}
+							{state?.current_phrases}{' '}
 						</span>
 					</p>
 				</li>

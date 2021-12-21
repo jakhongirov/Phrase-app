@@ -13,6 +13,7 @@ function Phrases() {
 	const alert = useAlert();
 	const [phrases, setPhrases] = React.useState([]);
 	const [search, setSearch] = React.useState('');
+	const [lang, setLang] = React.useState('en');
 	const [show, setShow] = React.useState(false);
 
 	//Phrases
@@ -35,6 +36,27 @@ function Phrases() {
 			.then((result) => setPhrases(result.data))
 			.catch((error) => console.log('error', error));
 	}, [token, search]);
+
+	//Search languages
+	React.useEffect(() => {
+		const myHeaders = new Headers();
+		myHeaders.append('Authorization', token.data.token);
+
+		const requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			redirect: 'follow',
+		};
+
+		fetch(
+			process.env.REACT_APP_API_URL +
+				`/phrases/search?language=${lang}&page=1&limit=2`,
+			requestOptions,
+		)
+			.then((response) => response.json())
+			.then((result) => setPhrases(result.data))
+			.catch((error) => console.log('error', error));
+	}, [token, lang]);
 
 	//Add Bookmarks
 	const saveAPI = async (id) => {
@@ -82,7 +104,11 @@ function Phrases() {
 								autoCapitalize='off'
 								onChange={(evt) => setSearch(evt.target.value.trim())}
 							/>
-							<select className='phrases-heading__select' name='select'>
+							<select
+								className='phrases-heading__select'
+								value={lang}
+								name='select'
+								onChange={(evt) => setLang(evt.target.value)}>
 								<option value='en'>Eng</option>
 								<option value='uz'>Uz</option>
 								<option value='ru'>Ru</option>
