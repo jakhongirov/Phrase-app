@@ -16,7 +16,7 @@ function MonthDiagramm() {
 			redirect: 'follow',
 		};
 
-		fetch(process.env.REACT_APP_API_URL + '/users/monthly', requestOptions)
+		fetch(process.env.REACT_APP_API_URL + '/phrases/monthly/' + token.data.user.id, requestOptions)
 			.then((response) => response.json())
 			.then((result) => setState(result.data))
 			.catch((error) => console.log('error', error));
@@ -55,7 +55,7 @@ function MonthDiagramm() {
 						Total phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.total_users}
+							{state?.total_prases}
 						</span>
 					</p>
 				</li>
@@ -65,7 +65,7 @@ function MonthDiagramm() {
 						Added phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.current_users}{' '}
+							{state?.current_phrases}{' '}
 						</span>
 					</p>
 				</li>

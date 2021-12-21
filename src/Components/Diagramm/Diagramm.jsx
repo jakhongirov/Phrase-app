@@ -2,10 +2,51 @@ import React from 'react';
 import './Diagramm.scss';
 import { Bar } from 'react-chartjs-2';
 import useToken from '../../Hooks/useToken';
+//////
+// import Login from '../Login/Login';
+// import { useQuery } from 'react-query';
+// import { useLocation } from 'react-router-dom';
+// import { Line } from 'react-chartjs-2';
+////////
 
 function Diagramm() {
 	const [token] = useToken();
-	const [state, setState] = React.useState();
+	const [users, setUsers] = React.useState();
+	/////////////////////////////////////////////////////////////
+
+	// const { pathname } = useLocation();
+
+	// function findStatus(pathname) {
+	// 	if (pathname === '/chart-stat') {
+	// 		return 'week';
+	// 	} else {
+	// 		return '';
+	// 	}
+	// }
+
+	// const { data: graph } = useQuery({
+	// 	queryKey: 'chart-stat-week',
+	// 	queryFn: () => {
+	// 		return Login(findStatus(pathname));
+	// 	},
+	// });
+
+	// let labelData = graph && graph.map((item) => item.week);
+	// let datasetData = graph && graph.map((item) => item.entery_sum);
+
+	// const data = {
+	// 	labels: labelData,
+	// 	datasets: [
+	// 		{
+	// 			label: '',
+	// 			data: datasetData,
+	// 			backgroundColor: '#3D58E8',
+	// 			barThickness: 20,
+	// 		},
+	// 	],
+	// };
+
+	///////////////////////////////////////////
 
 	React.useEffect(() => {
 		const myHeaders = new Headers();
@@ -17,12 +58,13 @@ function Diagramm() {
 			redirect: 'follow',
 		};
 
-		fetch(process.env.REACT_APP_API_URL + '/users/weekly', requestOptions)
+		fetch(process.env.REACT_APP_API_URL + '/phrases/weekly/' + token.data.user.id, requestOptions)
 			.then((response) => response.json())
-			.then((result) => setState(result.data))
+			.then((result) => setUsers(result.data))
 			.catch((error) => console.log('error', error));
 	}, [token]);
-
+console.log(token.data.user.id);
+	
 	return (
 		<>
 			<Bar
@@ -50,13 +92,15 @@ function Diagramm() {
 					},
 				}}></Bar>
 
+			{/* <Line data={data} /> */}
+
 			<ul className='total-phrases'>
 				<li className='total-phrases__item'>
 					<p className='total-phrases__text'>
 						Total phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.total_users}
+							{users?.total_prases}
 						</span>
 					</p>
 				</li>
@@ -66,7 +110,7 @@ function Diagramm() {
 						Added phrases -
 						<span className='total-phrases__span'>
 							{' '}
-							{state?.current_users}{' '}
+							{users?.current_phrases}{' '}
 						</span>
 					</p>
 				</li>
