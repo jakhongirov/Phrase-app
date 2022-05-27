@@ -50,7 +50,7 @@ function Phrases() {
 
 		fetch(
 			process.env.REACT_APP_API_URL +
-				`/phrases/search?language=${lang}&page=1&limit=2`,
+				`/phrases/search?language=${lang}&page=1&limit=10`,
 			requestOptions,
 		)
 			.then((response) => response.json())
