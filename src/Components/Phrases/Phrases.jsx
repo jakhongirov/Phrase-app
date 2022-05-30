@@ -29,7 +29,7 @@ function Phrases() {
 
 		fetch(
 			process.env.REACT_APP_API_URL +
-				`/phrases/search?q=${search}&page=1&limit=10`,
+				`/phrases/search?q=${search}&page=1&limit=2`,
 			requestOptions,
 		)
 			.then((response) => response.json())
